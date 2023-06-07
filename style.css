@@ -71,6 +71,7 @@ select {
   --primary-clr-300: #E29602;
 
   --neutral-clr-100: #FFF;
+  --neutral-clr-900: #000;
 
   --ff-primary: 'Inter', sans-serif;
 
@@ -81,7 +82,7 @@ select {
   --fs-500: 1.25rem;
   --fs-400: 1.125rem;
 
-  --br: .5rem;
+  --br: 0.313rem;
 }
 
 /* global styling */
@@ -102,6 +103,20 @@ button {
   cursor: pointer;
   border-radius: var(--br);
   padding: .75em;
+  animation: pulse-animation 1.75s alternate infinite linear;
+  box-shadow: 0 0 1rem var(--primary-clr-400);
+  transition: transform .1s linear;
+}
+
+@keyframes pulse-animation {
+  50% {
+    box-shadow: 0rem 0rem 2rem var(--primary-clr-400);
+  }
+}
+
+button:hover {
+  transform: scale(103%);
+  box-shadow: 0 0 2rem var(--primary-clr-400);
 }
 
 /* hero section */
@@ -111,11 +126,24 @@ button {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
+  padding-top: 4rem;
+}
+
+@media (min-width: 50em){
+  .hero-section {
+    padding-top: 0;
+  }
 }
 
 .hero-image-side img {
   margin-inline: auto;
   width: min(100%, 36rem);
+}
+
+@media (min-width: 50em) {
+  .hero-image-side img {
+    width: auto;
+  }
 }
 
 @media (min-width: 50em) {
@@ -134,7 +162,7 @@ button {
   max-width: 45ch;
   margin-inline: auto;
   text-align: center;
-  padding: 2rem 1.25rem;
+  padding: 1rem 1.25rem;
 }
 
 @media (min-width: 50em) {
@@ -145,6 +173,40 @@ button {
   .hero-text-side {
     max-width: 30ch;
     line-height: 1.3;
+  }
+}
+
+.hero-text-side-title-wrapper {
+  position: relative;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero-text-side-title-wrapper h1 {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.blur-effect {
+  position: absolute;
+  width: 50%;
+  height: 10%;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%);
+  border-radius: 100%;
+  box-shadow: 0rem 0rem 4rem 3.5rem var(--neutral-clr-900);
+  background-color: var(--neutral-clr-900);
+  opacity: 1;
+}
+
+@media (min-width: 75em) {
+  .blur-effect {
+    width: 90%;
+    box-shadow: 0rem 0rem 4rem 3.5rem var(--primary-clr-400);
+    background-color: var(--primary-clr-400);
+    opacity: .3;
   }
 }
 
@@ -162,6 +224,36 @@ button {
   position: relative;
   background-color: var(--primary-clr-900);
   padding-top: 2rem;
+  margin-right: auto;
+}
+
+@media (min-width: 50em) {
+  .about-product-section {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    padding-bottom: 2rem;
+  }
+
+  .about-product-section-image-side,
+  .about-product-section-text-side {
+    flex: 1;
+  }
+}
+
+.about-product-section::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  width: 100%;
+  height: 20%;
+  background-image: linear-gradient(#000, rgba(0, 0, 0, 0));
+}
+
+@media (min-width: 50em) {
+  .about-product-section::after {
+    height: 40%;
+  }
 }
 
 .about-product-section::before {
@@ -170,13 +262,62 @@ button {
   inset: 0;
   background-image: url("images/bg/blur-efect-bg.png");
   background-repeat: no-repeat;
-  background-position: left -3%;
+  background-position: left 0%;
   background-size: 22.5%;
+  z-index: 1;
+}
+
+@media (min-width: 50em) {
+  .about-product-section::before {
+    inset: -4.5rem 0 0 0;
+    background-size: 10%;
+  }
 }
 
 .about-product-section-image-side {
+  position: relative;
   width: min(100%, 32rem);
   margin-inline: auto;
+  z-index: 0;
+}
+
+@media (min-width: 50em) {
+  .about-product-section-image-side {
+    position: relative;
+    width: auto;
+    margin-inline: 0;
+  }
+
+  .about-product-section-image-side::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15%;
+    background-image: linear-gradient(#000, rgba(0, 0, 0, 0));
+  }
+}
+
+.about-product-section-image-side::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 8%;
+  height: 100%;
+  background-image: linear-gradient(to left,#000, rgba(0, 0, 0, 0));
+}
+
+@media (min-width: 50em) {
+  .about-product-section-image-side::after {
+    display: none;
+  }
+}
+
+.about-product-section-text-side {
+  position: relative;
+  z-index: 2;
 }
 
 .about-product-section-text-side p {
@@ -195,4 +336,18 @@ button {
 
 .accent-clr-300 {
   color: var(--primary-clr-300);
+}
+
+.desktop {
+  display: none;
+}
+
+@media (min-width: 50em) {
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
 }
