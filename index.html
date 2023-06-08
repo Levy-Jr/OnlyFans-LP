@@ -28,7 +28,16 @@
                     <div class="blur-effect"></div>
                 </div>
                 <div class="hero-image-side">
-                    <img src="images/hero-image.png" alt="uma mulher loira em um fundo vermelho vinho posando de lado para foto e um homem sem camisa olhando para baixo, também posando para foto.">
+                    <div class="relative">
+                        <div class="top-shadow"></div>
+                        <div class="left-shadow"></div>
+                        <div class="right-shadow"></div>
+                        <div class="bottom-shadow"></div>
+                        <img class="hero__image" src="images/hero-image.png" alt="uma mulher loira em um fundo vermelho vinho posando de lado para foto e um homem sem camisa olhando para baixo, também posando para foto.">
+                        <div class="stamp-wrapper">
+                            <img src="images/carimbo-22.png" alt="carimbo">
+                        </div>
+                    </div>
                 </div>
                 <div class="hero-text-side">
                     <div class="hero-text-side-title-wrapper desktop">
@@ -37,7 +46,9 @@
                         <div class="blur-effect"></div>
                     </div>
                     <p>Descubra sozinha(o) o passo a passo para ganhar dinheiro sem sair de casa.</p>
-                    <button><a href="https://pay.hotmart.com/error?errorMessage=005">ACESSE O CONTEÚDO</a></button>
+                    <button>
+                        <a onclick="return false;" href="https://pay.hotmart.com/G83583148Y?checkoutMode=2" class="hotmart-fb hotmart__button-checkout">ACESSE O CONTEÚDO</a> 
+                    </button>
                 </div>
             </div>
         </section>
@@ -55,7 +66,7 @@
                         <li>Conquiste sua independência financeira.</li>
                         <li>Você é o seu maior investimento</li>
                     </ul>
-                    <button><a href="https://pay.hotmart.com/error?errorMessage=005">ACESSE O CONTEÚDO</a></button>
+                    <button><a onclick="return false;" href="https://pay.hotmart.com/G83583148Y?checkoutMode=2" class="hotmart-fb hotmart__button-checkout">ACESSE O CONTEÚDO</a></button>
                 </div>
             </div>
         </section>
@@ -63,5 +74,18 @@
     <footer>
         <p>Copyright © 2023 Guia Secreto. Todos os direitos reservados.</p>
     </footer>
+    <script type="text/javascript">
+        function importHotmart(){ 
+          var imported = document.createElement('script'); 
+          imported.src = 'https://static.hotmart.com/checkout/widget.min.js'; 
+          document.head.appendChild(imported); 
+/*         var link = document.createElement('link'); 
+        link.rel = 'stylesheet'; 
+        link.type = 'text/css'; 
+        link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css'; 
+        document.head.appendChild(link); */ } 
+          importHotmart(); 
+         </script> 
+        
 </body>
 </html>
