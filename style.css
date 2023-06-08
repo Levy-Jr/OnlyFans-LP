@@ -209,7 +209,6 @@ button:hover {
   background-image: url("images/bg/background.png");
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 100vh;
   padding-top: 1rem;
 }
 
@@ -384,7 +383,12 @@ button:hover {
 .about-product-section {
   position: relative;
   background-color: var(--primary-clr-900);
-  padding-top: 2rem;
+}
+
+@media (min-width: 56.25em) {
+  .about-product-section {
+    padding-top: 2rem;
+  }
 }
 
 .about-product-section > .relative {
