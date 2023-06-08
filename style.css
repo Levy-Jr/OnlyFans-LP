@@ -243,11 +243,12 @@ button:hover {
 }
 
 .hero-image-side .stamp-wrapper {
-  position: relative;
+  position: absolute;
   z-index: 3;
-  width: clamp(6rem, 30vw, 10.625rem);
+  width: clamp(3rem, 17vw, 7rem);
   margin-left: 1rem;
   top: -2rem;
+  right: .5rem;
 }
 
 @media (min-width: 56.25em) {
@@ -255,6 +256,7 @@ button:hover {
     width: clamp(4rem, 12vw, 10.625rem);
     position: absolute;
     left: -5rem;
+    right: auto;
     bottom: 2rem;
     margin: 0;
     top: auto;
