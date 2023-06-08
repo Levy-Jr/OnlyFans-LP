@@ -282,6 +282,10 @@ button:hover {
   padding: 1rem 1.25rem;
 }
 
+.hero-text-side {
+  padding: 0rem 1.25rem;
+}
+
 @media (min-width: 56.25em) {
   .hero-text-side, .about-product-section-text-side {
     padding: 0;
@@ -360,7 +364,7 @@ button:hover {
 }
 
 .hero-text-side p {
-  margin-block: 1rem;
+  margin-block: 1rem 1.5rem;
 }
 
 @media (min-width: 56.25em) {
