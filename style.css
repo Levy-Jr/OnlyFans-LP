@@ -583,12 +583,32 @@ footer {
   background-image: linear-gradient(to bottom, #060407, transparent);
 }
 
+.top-shadow::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to top, #060407, transparent);
+}
+
 .left-shadow {
   height: 100%;
   width: 20%;
   left: 0;
   bottom: 0;
   background-image: linear-gradient(to right, #060407, transparent);
+}
+
+.left-shadow::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(to left, #060407, transparent);
 }
 
 .right-shadow {
