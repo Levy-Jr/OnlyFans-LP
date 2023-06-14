@@ -141,19 +141,6 @@ button a {
   padding: .4rem .75rem;
 }
 
-/* .hotmart__button-checkout {
-  font-size: var(--fs-400) !important;
-  font-family: var(--ff-primary) !important;
-  display: flex !important;
-  background: none !important;
-  text-shadow: none !important;
-  box-shadow: none !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  padding: .4rem .75rem !important;
-  transition: none !important;
-} */
-
 @keyframes pulse-animation {
   50% {
     box-shadow: 0rem 0rem 2rem #D7A548;
@@ -189,7 +176,7 @@ button a {
 
 button a::after {
   content: "";
-  display: inline-block;
+  display: var(--display, inline-block);
   width: 41px;
   height: 41px;
   background-image: url("images/icons/hand-button-icon.png");
@@ -201,6 +188,14 @@ button a::after {
 button:hover {
   transform: scale(103%);
   box-shadow: 0 0 2rem #D7A548;
+}
+
+.price {
+  display: none;
+}
+
+.price .large-price-number {
+  font-size: 2em;
 }
 
 /* hero section */
